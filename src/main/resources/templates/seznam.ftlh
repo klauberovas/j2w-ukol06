@@ -1,7 +1,8 @@
 [#ftl]
 [@c.page]
-    [#list seznam as vizitka]
+
     <div class="seznam">
+        [#list seznam as vizitka]
         <a href="/${vizitka.id}">
             <div class="vizitka">
                 <div class="jmeno">${vizitka.celeJmeno}</div>
@@ -27,7 +28,8 @@
                 </div>
             </div>
         </a>
-    [/#list]
+        [/#list]
+
         <a href="/nova">
             <div class="vizitka vizitka--nova">
                 <svg width="100" height="100">
