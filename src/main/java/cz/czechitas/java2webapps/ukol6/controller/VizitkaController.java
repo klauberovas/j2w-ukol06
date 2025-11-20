@@ -11,8 +11,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Optional;
-
 @Controller
 public class VizitkaController {
     private final VizitkaRepository vizitkaRepository;
@@ -55,8 +53,7 @@ public class VizitkaController {
     @PostMapping("/nova")
     public ModelAndView pridat(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
-            ModelAndView mav = new ModelAndView("formular");
-            return mav;
+            return new ModelAndView("formular");
         }
 
         vizitkaRepository.save(vizitka);
